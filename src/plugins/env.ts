@@ -9,6 +9,7 @@ declare module "fastify" {
       HTTP_HOST: string;
       API_KEY: string;
       USE_PROD_DB: boolean;
+      JWT_SECRET: string;
     };
   }
 }
@@ -18,6 +19,7 @@ export const schema = Type.Object({
   HTTP_HOST: Type.String({ default: "0.0.0.0" }),
   API_KEY: Type.String(),
   USE_PROD_DB: Type.Boolean({ default: false }),
+  JWT_SECRET: Type.String(),
 });
 
 export default fp<FastifyEnvOptions>(

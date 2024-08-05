@@ -2,7 +2,8 @@ import { FastifyPluginAsync } from "fastify";
 
 const root: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
   fastify.get("/", async function (request, reply) {
-    return { root: true };
+    const token = await fastify.jwt.sign({ test: "test" });
+    reply.send({ token });
   });
 };
 

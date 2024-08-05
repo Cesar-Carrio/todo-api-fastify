@@ -4,7 +4,7 @@ export default fp<FastifyCorsOptions>(
   (fastify, _, done) => {
     const corsOptions: FastifyCorsOptions = {
       // TODO: change this to be Client URL
-      origin: "https://cesarjcarrillo.com",
+      origin: "*",
       methods: ["GET", "POST", "PUT", "DELETE"],
       allowedHeaders: ["Origin", "Content-Type", "Authorization"],
     };
